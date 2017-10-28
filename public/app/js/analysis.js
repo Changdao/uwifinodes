@@ -41,8 +41,9 @@ wifiNodes.controller('wifiNodesCtrl',function($scope,$http,$window){
                     //基点位置
                     position:markerPosition, 
                     //marker图标，直接传递地址url
-                    icon:"http://developer.amap.com/wp-content/uploads/2014/06/marker.png", 
+                    icon:"http://reg.5uwifi.com/wifinodes/images/can.png", 
                     title:node.name,
+                    animation:'AMAP_ANIMATION_DROP',
                     //相对于基点的位置
                     offset:{x:-8, y:-34}
                 });
