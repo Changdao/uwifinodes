@@ -34,8 +34,8 @@ wifiNodes.controller('wifiNodesCtrl',function($scope,$http,$window){
         $http.get('api/nodes',{}).success(function(data){
             for (var i = 0; i < data.length; i ++) {
                 node = data[i];
-                lng = node.longitude||98.281;
-                lat = node.latitude||39.78;
+                lng = node.longitude||114.189615000000000;
+                lat = node.latitude||22.275745000000000;
                 var markerPosition = new AMap.LngLat(lng,lat);
                 var marker = new AMap.Marker({
                     //基点位置
