@@ -21,17 +21,22 @@ html(lang='en', ng-app='wifiNodes')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     style(type='text/css').
       body{
-      margin:0;
-      height:100%;
-      width:100%;
-      position:absolute;
+        margin:0;
+        height:100%;
+        width:100%;
+        position:absolute;
       }
       #mapContainer{
-      position: absolute;
-      top:0px;
-      left: 0;
-      right:0;
-      bottom:0;
+        position: absolute;
+        top:0px;
+        left: 0;
+        right:0;
+        bottom:0;
+      }
+      .node-info {
+      }
+      .node-info .node-title {
+        font-weight:600;
       }
   body
     .container(ng-controller='wifiNodesCtrl')

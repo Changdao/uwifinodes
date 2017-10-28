@@ -22,14 +22,18 @@ wifiNodes.controller('wifiNodesCtrl',function($scope,$http,$window){
 
         });
             
-        // 随机向地图添加500个标注点
+        
+        var infoWindow = new AMap.InfoWindow({
+            content: '',
+            offset: new AMap.Pixel(16, -45)
+        });
+
         var mapBounds = map.getBounds();
         var sw = mapBounds.getSouthWest();
         var ne = mapBounds.getNorthEast();
         var lngSpan = Math.abs(sw.lng - ne.lng);
         var latSpan = Math.abs(ne.lat - sw.lat);
-        
-        
+
 
         $http.get('api/nodes',{}).success(function(data){
             for (var i = 0; i < data.length; i ++) {
@@ -48,8 +52,12 @@ wifiNodes.controller('wifiNodesCtrl',function($scope,$http,$window){
                     offset:{x:-8, y:-34}
                 });
                 marker.id = node.id;
+                marker.wifiNode = node;
                 AMap.event.addListener(marker,"click",function(event){
-                    $window.location.href="nodes/"+event.target.id;
+                    //$window.location.href="nodes/"+event.target.id;
+                    var infoNode = event.target.wifiNode;
+                    infoWindow.setContent('<div class="node-info"><p class="node-title">'+infoNode.location_cn+'</p><p>'+infoNode.brand+'</p><p>'+infoNode.location+'</p></p>');
+                    infoWindow.open(map, event.target.getPosition());
                 });
                 markers.push(marker);
             }

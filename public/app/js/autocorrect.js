@@ -117,14 +117,21 @@ autoCorrect.controller('autoCorrectCtrl',function($scope,$http,Node){
                 // panel: "panel"
             });
             //关键字查询
-            var locationStr = node.location;
+            /*var locationStr = node.location;
             var l = locationStr.split(',');
             if(l.length){
                 if(l[l.length-1]=='New Territories')l.splice(l.length-1,1);
                 if(l[0].startsWith('Shop'))l.splice(0,1);
-                if(l[0].indexOf('/F')).splice(0,1);
+                if(l[0].indexOf('/F'))l.splice(0,1);
             }
             locationStr = l.join(',');
+            
+
+            console.log('==>New location:',locationStr);
+            */
+            var locationStr = node.location_cn;
+            var l=locationStr.split(' ');
+            if(l.length)locationStr = l[l.length-1];
 
             placeSearch.search(locationStr,function(status,result){
               
