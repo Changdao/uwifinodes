@@ -49,7 +49,7 @@ wifiNodes.controller('wifiNodesCtrl',function($scope,$http,$window){
                 });
                 marker.id = node.id;
                 AMap.event.addListener(marker,"click",function(event){
-                    $window.location.href="node#/"+event.target.hotelId;
+                    $window.location.href="nodes/"+event.target.id;
                 });
                 markers.push(marker);
             }
