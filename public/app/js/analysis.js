@@ -10,8 +10,8 @@ wifiNodes.controller('wifiNodesCtrl',function($scope,$http,$window){
             resizeEnable: true,
             //二维地图显示视口
             view: new AMap.View2D({
-                center:new AMap.LngLat(105.281715, 33.080083),
-                zoom:5 
+                center:new AMap.LngLat(114.189615000000000, 22.275745000000000),
+                zoom:10 
             })
             
         });

@@ -28,14 +28,12 @@ html(lang='en', ng-app='wifiNodes')
       }
       #mapContainer{
       position: absolute;
-      top:56px;
+      top:0px;
       left: 0;
       right:0;
       bottom:0;
       }
   body
-    nav.navbar.navbar-default.navbar-fixed-top(role='navigation', ng-include="'partials/navigation'")
-    h1.page-header
     .container(ng-controller='wifiNodesCtrl')
       .row
         #mapContainer
